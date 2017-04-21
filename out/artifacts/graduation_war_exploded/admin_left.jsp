@@ -18,10 +18,10 @@
                 <span>图书管理</span>
             </div>
             <div id="book_manager">
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="add_book.jsp" target="rightFrame">新增图书</a><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="add_book.jsp" target="rightFrame">添加图书</a><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="add_book.jsp" target="rightFrame">新增图书信息</a><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="add_book.jsp" target="rightFrame">添加图书库存</a><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="delete_book.jsp" target="rightFrame">删除图书</a><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="update_book.jsp" target="rightFrame">修改图书属性</a><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="update_book.jsp" target="rightFrame">修改图书信息</a><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="rest_book.jsp" target="rightFrame">统计图书剩余量</a><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="saled_book.jsp" target="rightFrame">统计图书销售量</a><br>
             </div>

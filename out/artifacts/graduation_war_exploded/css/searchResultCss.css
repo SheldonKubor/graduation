@@ -1,0 +1,190 @@
+#hd{
+    font: 12px 'Hiragino Sans GB',"simsun","Arial";
+    color: #646464;
+    min-width: 1200px;
+    background-color: #fff
+}
+#hd .tools{
+    width: 100%;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #f2f2f2;
+    height: 34px;
+    line-height: 34px;
+    position: relative;
+    z-index: 10010;
+}
+.tools .top_link {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    height: 34px;
+}
+.top_link .tools_list{
+    float: right;
+    padding-top: 2px
+}
+.tools_list li{
+    float: left;
+    height: 22px;
+    padding-top: 4px;
+    line-height: 21px;
+    background: url(http://img63.ddimg.cn/upload_img/00459/home/head_sprite.png) no-repeat left -285px;
+    position: relative;
+    z-index: 100;
+}
+.tools_list a{
+    display: block;
+    position: relative;
+    line-height: 21px;
+    padding: 0 7px 0 8px;
+}
+#hd .search_box{
+    height: 100px;
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+#hd .logo{
+    overflow: hidden;
+    width: 362px;
+    vertical-align: middle;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#hd .search{
+    position: absolute;
+    margin-top: 20px;
+    height: 48px;
+    z-index: 9999;
+    left: 362px;
+    top: 0;
+}
+.search #form_search_new{
+    display: block;
+    height: 50px;
+}
+.search .search_text{
+    width: 500px;
+    height: 40px;
+    border: 2px solid #ff2832;
+    padding: 9px 0 9px 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    color: #323232;
+    font: 12px/18px 'Hiragino Sans GB',"simsun",Arial;
+    outline: 0;
+    background: none;
+}
+.search .search_button{
+    width: 48px;
+    height: 40px;
+    border: none;
+    background: url(http://img63.ddimg.cn/upload_img/00459/home/head_sprite.png) no-repeat 0 -346px;
+    cursor: pointer;
+    position: absolute;
+    left: 517px;
+    top: 0;
+}
+#order{
+    height: 30px;
+    margin: 0px 0px 0px 0px;
+    background-color: #f5f5f5;
+}
+#order .order_item{
+    float: left;
+    list-style-type: none;
+}
+.order_item li{
+    float: left;
+    height: 30px;
+    list-style: none;
+}
+.result_div .result_item{
+    margin: 0;
+    padding-left: 40px;
+    list-style-type: none;
+    border: 0;
+}
+.result_item li{
+    height: 242px;
+    width: 960px;
+    position: relative;
+    background: #fff;
+    padding-left: 20px;
+}
+.result_item li .pic{
+    position: absolute;
+    left: 20px;
+    top: 21px;
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+.result_item li .pic img{
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border: 0;
+}
+.result_item li .name{
+    position: absolute;
+    left: 240px;
+    top: 21px;
+    line-height: 20px;
+    height: 20px;
+    width: 720px;
+    overflow: hidden;
+}
+.result_item li .name a{
+    font-size: 14px;
+    color: #1a66b3;
+    font-family: simsun;
+}
+.result_item li .jianjie{
+    position: absolute;
+    left: 240px;
+    top: 90px;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+    color: #333;
+    width: 720px;
+    font-size: 14px;
+}
+.result_item li .price{
+    position: absolute;
+    left: 240px;
+    top: 48px;
+    font-family: "arial";
+    line-height: 30px;
+    width: 720px;
+}
+.result_item li .price span{
+    color: #ff2832;
+    font-size: 18px;
+}
+.result_item li .add_gouwuche{
+    position: absolute;
+    left: 240px;
+    top: 193px;
+}
+.add_product{
+    width: 100px;
+    height: 28px;
+    line-height: 28px;
+    background: #ff2832;
+    border-radius: 3px;
+    display: inline-block;
+    zoom: 1;
+    color: #fff;
+    text-align: center;
+    font-family: 'Microsoft Yahei';
+    font-size: 14px;
+    margin-right: 10px
+}
