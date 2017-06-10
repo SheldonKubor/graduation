@@ -11,6 +11,24 @@ public class BookInfoBean {
     private double outPrice;
     private String classify;
     private int bookNum;
+    private String imgUrl;
+    private String content;
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
 
     public int getBookNum() {
         return bookNum;

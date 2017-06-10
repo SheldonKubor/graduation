@@ -1,0 +1,19 @@
+html,
+body {
+	width:100%;
+	height: 100%;
+	background:#fff;
+	font-family: "微软雅黑";
+}
+.row{width:100%;margin:10px;position:relative;}
+.row input{padding:10px;width:60%;border:1px solid #ccc;height:30px;margin-left: 10px;outline-color: lightseagreen;font-size:14px;}
+.btn{margin-left:5%;float:left;border:none;outline:none;display: block;padding:10px 13px;color:#fff;font-size:16px;background:lightseagreen;}
+.row textarea{width:60%;border:1px solid #ccc;margin-left: 10px;outline-color: lightseagreen;font-size:14px;}
+.row .details{position:absolute;top:30%;left:0;}
+.row .detailsR{margin-left:4%;}
+table{width: 100%;border:1px solid #ccc;border-bottom: none;}
+table thead{background:whitesmoke;border-bottom:1px solid #ccc;}
+table tr{}
+table td{text-align: center;padding:5px 0;border-bottom:1px solid #ccc;}
+.btn2{border:none;outline:none;display: inline-block;padding:5px 10px;color:#fff;font-size:16px;background:lightseagreen;}
+.btn3{margin-left:8%;float:left;border:none;outline:none;display: block;padding:5px 10px;color:#fff;font-size:16px;background:lightseagreen;}

@@ -2,7 +2,12 @@ package com.dao;
 
 import com.model.UserBean;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Constantine on 2017/2/28.
@@ -85,25 +90,7 @@ public class UserDao {
         }
         return password;
     }
-    //查看所有用户
-    public UserBean queryUser(){
 
-        UserBean userBean=new UserBean();
-        Connection con=null;
-        Statement st=null;
-        String sql="select * from users";
-        try {
-            con=GetConnection.getConnection();
-            st=con.createStatement();
-            ResultSet rs=st.executeQuery(sql);
-            while (rs.next()){
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return userBean;
-    }
     //添加管理员
     public static int addAdmin(UserBean userBean){
         Connection con=null;
@@ -136,11 +123,10 @@ public class UserDao {
         int resultCode=0;
         try{
             con=GetConnection.getConnection();
-            String sql="delete from users where username=? AND password=? AND is_admin=?";
+            String sql="delete from users where username=? ";
             ps=con.prepareStatement(sql);
             ps.setString(1,userBean.getUsername());
-            ps.setString(2,userBean.getPassword());
-            ps.setInt(2,1);
+
             resultCode=ps.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();
@@ -153,6 +139,75 @@ public class UserDao {
             }
         }
         return resultCode;
+    }
+
+
+    public static List<UserBean> queryCusInfo(){
+        List<UserBean> userBeanList=new ArrayList<UserBean>();
+
+        Connection con=null;
+        PreparedStatement ps=null;
+
+        try {
+            con=GetConnection.getConnection();
+            String sql="SELECT  * FROM  users WHERE is_admin=?";
+            ps=con.prepareStatement(sql);
+            ps.setInt(1,0);
+            ResultSet rs=ps.executeQuery();
+            while (rs.next()){
+                UserBean userBean=new UserBean();
+                userBean.setId(rs.getInt(1));
+                userBean.setUsername(rs.getString(2));
+                userBean.setPassword(rs.getString(3));
+
+                userBeanList.add(userBean);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try{
+                ps.close();
+                con.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        return userBeanList;
+    }
+
+    public static List<UserBean> queryAdminInfo(){
+        List<UserBean> userBeanList=new ArrayList<UserBean>();
+
+        Connection con=null;
+        PreparedStatement ps=null;
+
+        try {
+            con=GetConnection.getConnection();
+            String sql="SELECT  * FROM  users WHERE is_admin=?";
+            ps=con.prepareStatement(sql);
+            ps.setInt(1,1);
+            ResultSet rs=ps.executeQuery();
+            while (rs.next()){
+                UserBean userBean=new UserBean();
+                userBean.setId(rs.getInt(1));
+                userBean.setUsername(rs.getString(2));
+                userBean.setPassword(rs.getString(3));
+
+                userBeanList.add(userBean);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try{
+                ps.close();
+                con.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        return userBeanList;
     }
 
 }

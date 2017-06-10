@@ -94,13 +94,18 @@
     background-color: #f5f5f5;
 }
 #order .order_item{
+    margin: 0;
     float: left;
     list-style-type: none;
 }
 .order_item li{
     float: left;
-    height: 30px;
-    list-style: none;
+    height: 22px;
+    padding-top: 4px;
+    line-height: 21px;
+    background: url(http://img63.ddimg.cn/upload_img/00459/home/head_sprite.png) no-repeat left -285px;
+    position: relative;
+    z-index: 100;
 }
 .result_div .result_item{
     margin: 0;

@@ -9,6 +9,17 @@
 <html>
 <head>
     <title></title>
+    <style>
+        input{
+            width: 300px;
+            height: 22px;
+            border: 1px solid #95E0EF;
+            background-color: #f3fcfe;
+            border-left-width: 2px;
+            padding: 5px 0 0 2px;
+            float: left;
+        }
+    </style>
     <script>
         function onClick(url) {
             initXMLHttpRequestObj();
@@ -54,10 +65,10 @@
 </head>
 <body>
     <form action="add_book_num" method="post">
-        请输入图书的名字<input type="text" name="book_name" id="book_name"/>
-        请输入添加图书数量<input type="text" name="book_num" id="book_num"/>
-        <input type="file" name="book_img" id="book_img"/>
-        <input type="submit" value="提交"/>
+        请输入图书的名字<input type="text" name="book_name" id="book_name"/><br>
+        请输入添加图书数量<input type="text" name="book_num" id="book_num"/><br>
+        <input type="file" name="book_img" id="book_img"/><br>
+        <input type="submit" value="提交"/><br>
         <button>提交</button>
 
     </form>

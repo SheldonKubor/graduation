@@ -9,6 +9,16 @@ public class UserBean {
     private String password;
     private int isAdmin;
 
+    @Override
+    public String toString() {
+        return "UserBean{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", isAdmin=" + isAdmin +
+                '}';
+    }
+
     public String getUsername() {
         return username;
     }

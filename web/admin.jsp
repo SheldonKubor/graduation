@@ -16,7 +16,7 @@
         <%--response.sendRedirect("login.jsp");--%>
     <%--}--%>
 <%--%>--%>
-<frameset rows="20%,*">
+<frameset rows="7%,*">
     <frame src="admin_top.jsp" name="topFrame"/>
 
     <frameset cols="20%,*">
@@ -26,5 +26,11 @@
     </frameset>
 
 </frameset>
+<body>
+
+    <div>
+
+    </div>
+</body>
 
 </html>
