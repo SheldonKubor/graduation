@@ -10,7 +10,9 @@
 <head>
     <title>欢迎注册</title>
     <link rel="stylesheet" href="css/loginCss.css" type="text/css"/>
+    <script src="js/jquery-1.11.3.js"></script>
     <script>
+
         function checkPw() {
             var password=document.getElementById("password").value;
             var checkPw=document.getElementById("check_pw").value;

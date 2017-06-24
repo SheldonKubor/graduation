@@ -10,6 +10,15 @@ public class OrderBean {
     private String phone;
     private String mail;
     private String address;
+    private double price;
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     public int getId() {
         return id;

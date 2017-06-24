@@ -18,7 +18,7 @@
     <h1>add admin</h1>
     <button onclick="display('add_admin')">添加管理员</button>
     <%--<button onclick="display('delete_admin')">删除管理员</button>--%>
-    <div id="add_admin">
+    <div id="add_admin" hidden="display">
         <div class="row">
             <label>管理员账号</label>
             <input type="text" name="admin_account" id="add_admin_account"/>

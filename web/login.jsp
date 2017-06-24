@@ -12,12 +12,7 @@
     <link rel="stylesheet" href="css/loginCss.css" type="text/css"/>
   </head>
   <body>
-  <%--<%--%>
-    <%--Object isLogin=session.getAttribute("isLogin");--%>
-    <%--if(null==isLogin){--%>
-        <%--response.sendRedirect("login.jsp");--%>
-    <%--}--%>
-  <%--%>--%>
+
   <div class="container">
     <section>
       <div id="container_demo">

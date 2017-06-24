@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.*;
 
 /**
@@ -18,9 +19,13 @@ public class Register extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        // super.doGet(req, resp);
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
         String username=req.getParameter("username");
         String password=req.getParameter("password");
         String qr_password=req.getParameter("qr_password");
+
+        PrintWriter out=resp.getWriter();
 
         Connection con=null;
         Statement stat=null;
@@ -35,7 +40,7 @@ public class Register extends HttpServlet {
             ResultSet rs=stat.executeQuery(sql2);
             //判断用户名是否重复
             while(rs.next()){
-                System.out.println("user exesit");
+                resp.sendRedirect("back_to_login.jsp");
                 flag=false;
                 break;
             }
@@ -61,6 +66,7 @@ public class Register extends HttpServlet {
                 con.close();
             } catch (SQLException e) {
                 e.printStackTrace();
+                System.out.println("exception");
             }
         }
 

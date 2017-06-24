@@ -10,32 +10,10 @@
            uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>搜索结果</title>
     <link rel="stylesheet" href="css/searchResultCss.css" type="text/css"/>
 </head>
 <body>
-    <%--<div id="hd">--%>
-        <%--<div class="tools">--%>
-            <%--<div class="top_link">--%>
-                <%--<ul class="tools_list">--%>
-                    <%--<li><a href="login.jsp">登录</a>&nbsp;&nbsp;</li>--%>
-                    <%--<li><a href="shop_cart.jsp" style="border: none">我的购物车</a></li>--%>
-                <%--</ul>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-        <%--<div class="search_box">--%>
-            <%--<div class="logo">--%>
-                <%--<img src="http://img63.ddimg.cn/upload_img/00444/tupian/doodle.gif">--%>
-            <%--</div>--%>
-            <%--<div class="search">--%>
-                <%--<form action="search_book" name="searchform" id="form_search_new" method="GET">--%>
-                    <%--<input type="text" placeholder="请输入图书分类，作者或书名" class="search_text" name="search_info"/>--%>
-
-                    <%--<input type="submit" class="search_button" value=""/>--%>
-                <%--</form>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
     <jsp:include page="index_top.jsp"/>
     <div id="search_center">
         <div id="order">

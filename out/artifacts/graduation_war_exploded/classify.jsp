@@ -12,11 +12,19 @@
 <head>
     <title>Title</title>
     <script src="js/hide.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
     <link rel="stylesheet" type="text/css" href="css/book.css"/>
 </head>
 <body>
-<button onclick="display('add_classify')">新增分类</button><br>
-    <div id="add_classify">
+    <button onclick="display('delete_classify')">删除分类</button>
+    <div id="delete_classify" hidden="display">
+    <form>
+        请输入要删除的分类<input type="text" name="classify" id="classify"/>
+        <input type="button" id="btn" value="确定"/>
+    </form>
+</div>
+    <button onclick="display('add_classify')">新增分类</button><br>
+    <div id="add_classify" hidden="display">
     	<div class="row">
     		<label>请输入分类名称</label>
     		<input type="text" name="classifyName" id="classifyName"/>
@@ -72,7 +80,7 @@
             if (ready==4&&req.status==200){
                 data=req.responseText;
                 if (data=="0") {
-                    alert("删除失败，请检查用户名是否正确");
+                    alert("添加失败");
                     window.location.reload();
                     return;
                 }
@@ -90,6 +98,25 @@
             window.location.reload();
             return;
         }
+
+        $("#btn").click(function () {
+            var classify=$("#classify").val();
+
+            $.ajax({
+                url:"delete_classify",
+                type:"POST",
+                data:{"name":classify},
+                success:function (data) {
+                    if (data=="1"){
+                        reLoad();
+                    }else {
+                        alert("删除失败");
+                        window.location.reload();
+                        return;
+                    }
+                }
+            })
+        })
     </script>
 </body>
 </html>

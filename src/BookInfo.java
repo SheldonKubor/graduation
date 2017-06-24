@@ -16,6 +16,9 @@ import java.io.IOException;
 public class BookInfo extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
+
         String bookname=req.getParameter("bookname");
         BookInfoBean bookInfoBean=new BookInfoBean();
         bookInfoBean.setBookName(bookname);

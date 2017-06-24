@@ -15,7 +15,7 @@ import java.sql.Statement;
 import java.util.List;
 
 @WebServlet("/HelloWorld")
-public class HelloWorld extends HttpServlet {
+public class Login extends HttpServlet {
 
 
     @Override

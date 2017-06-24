@@ -142,6 +142,7 @@ public class BookDao {
                 bookInfoBean.setBookNum(rs.getInt(7));
                 bookInfoBean.setContent(rs.getString(8));
                 bookInfoBean.setImgUrl(rs.getString(9));
+                bookInfoBean.setSaledNum(rs.getInt(10));
                 bookInfoBeanList.add(bookInfoBean);
             }
         }catch (Exception e){
@@ -179,6 +180,7 @@ public class BookDao {
                 bookInfo.setBookNum(rs.getInt(7));
                 bookInfo.setContent(rs.getString(8));
                 bookInfo.setImgUrl(rs.getString(9));
+                bookInfo.setSaledNum(rs.getInt(10));
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -219,6 +221,7 @@ public class BookDao {
                 bookInfoBean.setBookNum(rs.getInt(7));
                 bookInfoBean.setContent(rs.getString(8));
                 bookInfoBean.setImgUrl(rs.getString(9));
+                bookInfoBean.setSaledNum(rs.getInt(10));
                 bookInfoBeanList.add(bookInfoBean);
             }
         }catch (Exception e){
@@ -260,6 +263,8 @@ public class BookDao {
                 bookInfoBean.setClassify(rs.getString(6));
                 bookInfoBean.setBookNum(rs.getInt(7));
                 bookInfoBean.setContent(rs.getString(8));
+                bookInfoBean.setImgUrl(rs.getString(9));
+                bookInfoBean.setSaledNum(rs.getInt(10));
                 bookInfoBeanList.add(bookInfoBean);
             }
         }catch (Exception e){
@@ -285,7 +290,7 @@ public class BookDao {
 
         try {
             con=GetConnection.getConnection();
-            String sql="SELECT  bi.book_name,bi.out_price,bi.img_resource FROM  sale_info si INNER JOIN book_info bi ON bi.book_name=si.book_name ORDER BY si.sale_num limit 5";
+            String sql="SELECT  book_name,out_price,img_resource FROM  book_info ORDER BY saled_num limit 5";
             ps=con.prepareStatement(sql);
             ResultSet rs=ps.executeQuery();
             while (rs.next()){
@@ -331,6 +336,7 @@ public class BookDao {
                 bookInfo.setBookNum(rs.getInt(7));
                 bookInfo.setContent(rs.getString(8));
                 bookInfo.setImgUrl(rs.getString(9));
+                bookInfo.setSaledNum(rs.getInt(10));
             }
         }catch (Exception e){
             e.printStackTrace();

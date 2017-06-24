@@ -16,6 +16,28 @@ import java.util.List;
 public class BookAllSaled extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        req.setCharacterEncoding("utf-8");
+//        resp.setContentType("text/html;charset=utf-8");
+//
+//        String bookname=req.getParameter("bookname");
+//        BookInfoBean bookInfoBean=new BookInfoBean();
+//        bookInfoBean.setBookName(bookname);
+//
+//        BookInfoBean resultBean= BookDao.queryOneBook(bookInfoBean);
+//
+//        HttpSession session = req.getSession();
+//        session.setAttribute("bookOneSaledResult",resultBean);
+//
+//        req.setAttribute("bookOneSaledResult",resultBean);
+//        req.getRequestDispatcher("rest_book.jsp").forward(req,resp);
+        doGet(req,resp);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
+
         List bookList= BookDao.queryBookInfo();
 
         HttpSession session = req.getSession();
@@ -26,10 +48,5 @@ public class BookAllSaled extends HttpServlet {
         System.out.print(bookList.toString());
 
         req.getRequestDispatcher("saled_book.jsp").forward(req,resp);
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req, resp);
     }
 }

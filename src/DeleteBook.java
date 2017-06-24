@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -17,31 +18,23 @@ public class DeleteBook extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doPost(req, resp);
-//        req.setCharacterEncoding("utf-8");
-//        resp.setContentType("text/html;charset=utf-8");
-//
-//        String json= JsonUtil.readJSONData(req);
-//        System.out.print(json);
-//
-//        PrintWriter out=resp.getWriter();
-//        //将json字符串转为java对象
-//        Gson gson=new Gson();
-//        BookInfoBean bookInfoBean=gson.fromJson(json, BookInfoBean.class);
-//
-//        System.out.print(bookInfoBean.toString());
-//
-//        String bookName=bookInfoBean.getBookName();
-//        System.out.print(bookName);
-//
-//        int resultCode= BookDao.deleteBook(bookName);
-//
-//        if(resultCode==0){
-//            out.print("0");
-//        }else {
-//            out.print("1");
-//        }
-        //out.print("0");
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
 
+        PrintWriter out=resp.getWriter();
+        String name = req.getParameter("bookname");
+        int resultCode=BookDao.deleteBook(name);
+        if(resultCode==0){
+            out.print("0");
+        }else {
+            out.print("1");
+        }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
         String name = req.getParameter("name");
         BookDao.deleteBook(name);
 
@@ -50,12 +43,5 @@ public class DeleteBook extends HttpServlet {
         session.setAttribute("book",list);
         req.setAttribute("book",list);
         req.getRequestDispatcher("book.jsp").forward(req,resp);
-
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //super.doGet(req, resp);
-        doPost(req, resp);
     }
 }

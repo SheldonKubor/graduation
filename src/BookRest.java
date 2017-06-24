@@ -1,5 +1,4 @@
 import com.dao.BookDao;
-import com.model.BookInfoBean;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,16 +19,9 @@ public class BookRest extends HttpServlet {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
-        String bookname=req.getParameter("book_name");
-        BookInfoBean bookInfoBean=new BookInfoBean();
-        bookInfoBean.setBookName(bookname);
-
-        BookInfoBean resultBean= BookDao.queryOneBook(bookInfoBean);
 
         HttpSession session = req.getSession();
-        session.setAttribute("bookRestResult",resultBean);
 
-        req.setAttribute("bookRestResult",resultBean);
 
         List bookList= BookDao.queryBookInfo();
         session.setAttribute("allRestResult",bookList);
@@ -47,5 +39,19 @@ public class BookRest extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
+//        req.setCharacterEncoding("utf-8");
+//        resp.setContentType("text/html;charset=utf-8");
+//
+//        String bookname=req.getParameter("book_name");
+//        BookInfoBean bookInfoBean=new BookInfoBean();
+//        bookInfoBean.setBookName(bookname);
+//
+//        BookInfoBean resultBean= BookDao.queryOneBook(bookInfoBean);
+//
+//        HttpSession session = req.getSession();
+//        session.setAttribute("bookRestResult",resultBean);
+//
+//        req.setAttribute("bookRestResult",resultBean);
+//        req.getRequestDispatcher("rest_book.jsp").forward(req,resp);
     }
 }

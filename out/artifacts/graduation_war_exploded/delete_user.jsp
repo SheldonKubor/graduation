@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/book.css"/>
 </head>
 <body>
     <h1>delete user</h1>
@@ -19,8 +20,8 @@
                            <input type="button" value="确定" onclick="onClick('delete_user')"/>
     </form>
     <div>
-        <table>
-            <tr><td>序号</td><td>用户名</td><td>操作</td></tr>
+        <table cellpadding="0" cellspacing="0">
+            <thead><tr><td>序号</td><td>用户名</td><td>操作</td></tr></thead>
             <c:forEach items="${requestScope.allCus}" var="cus">
                 <tr>
                     <td>

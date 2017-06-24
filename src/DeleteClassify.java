@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -16,6 +17,8 @@ import java.util.List;
 public class DeleteClassify extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
         String name=req.getParameter("name");
 
         int resultCode= ClassfiyDao.deleteClassify(name);
@@ -30,6 +33,15 @@ public class DeleteClassify extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
+        String name=req.getParameter("name");
+        PrintWriter out=resp.getWriter();
+        int resultCode= ClassfiyDao.deleteClassify(name);
+        if(resultCode==0){
+            out.print("0");
+        }else {
+            out.print("1");
+        }
     }
 }

@@ -9,14 +9,27 @@
 <html>
 <head>
     <title>填写订单</title>
+    <link rel="stylesheet" type="text/css" href="css/book.css"/>
 </head>
 <body>
 <h2>填写收货人信息</h2>
-<form action="add_order" method="post">
-    姓名<input type="text" name="name"/>
-    电话<input type="text" name="phone"/>
-    邮编<input type="text" name="mail"/>
-    地址<input type="text" name="address"/>
+<form action="firm_order" method="post">
+    <div class="row">
+        <label>姓名:</label>
+        <input type="text" name="name"/>
+    </div>
+    <div class="row">
+        <label>电话:</label>
+        <input type="text" name="phone"/>
+    </div>
+    <div class="row">
+        <label>邮编:</label>
+        <input type="text" name="mail"/>
+    </div>
+    <div class="row">
+        <label>地址:</label>
+        <input type="text" name="address"/>
+    </div>
         <input type="submit" value="提交"/>
 </form>
 </body>

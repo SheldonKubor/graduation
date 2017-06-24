@@ -12,11 +12,19 @@
 <head>
     <title>Title</title>
     <script src="js/hide.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
     <link rel="stylesheet" type="text/css" href="css/book.css"/>
 </head>
 <body>
+    <button onclick="display('delete_book')">删除图书</button>
+    <div id="delete_book" hidden="display">
+        <form>
+            请输入要删除的书名<input type="text" name="bookname" id="bookname"/>
+                            <input type="button" id="btn" value="确定" onclick="onClick('delete_user')"/>
+        </form>
+    </div>
     <button onclick="display('add_book')">新增图书</button><br>
-    <div id="add_book">
+    <div id="add_book" hidden="display">
         <form action="add_book" method="post" enctype="multipart/form-data">
             <div class="row">
                 <label>书名:</label>
@@ -26,10 +34,7 @@
                 <label>作者:</label>
                 <input type="text" name="author" id="add_book_author" placeholder="作者名称"/>
             </div>
-            <%--<div class="row">--%>
-                <%--<label>类别:</label>--%>
-                <%--<input type="text" name="classify" id="add_book_classify" placeholder="类别..."/>--%>
-            <%--</div>--%>
+
             <div class="row">
                 <label>类别:</label>
                 <select name="classify">
@@ -62,7 +67,7 @@
     <div>
         <table cellpadding="0" cellspacing="0">
             <thead><tr><td>书名</td><td>作者</td><td>类别</td><td>操作</td></tr></thead>
-            <c:forEach items="${sessionScope.book}" var="book">
+            <c:forEach items="${requestScope.book}" var="book">
                 <tr>
                     <td>
                             ${book.bookName}
@@ -82,11 +87,31 @@
         </table>
     </div>
     <script>
+
         function reLoad() {
             alert("删除成功");
             window.location.reload();
             return;
         }
+
+        $("#btn").click(function () {
+            var bookname=$("#bookname").val();
+
+                $.ajax({
+                    url:"delete_book",
+                    type:"POST",
+                    data:{"bookname":bookname},
+                    success:function (data) {
+                        if (data=="1"){
+                            reLoad();
+                        }else {
+                            alert("删除失败");
+                            window.location.reload();
+                            return;
+                        }
+                    }
+                })
+        })
     </script>
 </body>
 </html>

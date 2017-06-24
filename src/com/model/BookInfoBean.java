@@ -13,6 +13,15 @@ public class BookInfoBean {
     private int bookNum;
     private String imgUrl;
     private String content;
+    private int saledNum;
+
+    public int getSaledNum() {
+        return saledNum;
+    }
+
+    public void setSaledNum(int saledNum) {
+        this.saledNum = saledNum;
+    }
 
     public void setContent(String content) {
         this.content = content;
@@ -96,6 +105,9 @@ public class BookInfoBean {
                 ", outPrice=" + outPrice +
                 ", classify='" + classify + '\'' +
                 ", bookNum=" + bookNum +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", content='" + content + '\'' +
+                ", restNum=" + saledNum +
                 '}';
     }
 }

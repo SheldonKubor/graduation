@@ -1,4 +1,7 @@
 import com.dao.OrderDao;
+import com.dao.OrderItemDao;
+import com.model.OrderBean;
+import com.model.ShopCart;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,26 +10,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 /**
- * Created by Constantine on 2017/6/10.
+ * Created by Constantine on 2017/6/12.
  */
 @WebServlet("/add_order")
-public class AddOrder extends HttpServlet {
+public class AddOrder extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("utf-8");
-        resp.setCharacterEncoding("utf-8");
+        PrintWriter out=resp.getWriter();
         HttpSession session=req.getSession();
-        String name = req.getParameter("name");
-        String phone = req.getParameter("phone");
-        String mail = req.getParameter("mail");
-        String address = req.getParameter("address");
-        String username = (String) session.getAttribute("user");
-        double price=(Double) session.getAttribute("allPrice");
-        OrderDao.addOrder(username,name,phone,mail,address,price);
-        req.getRequestDispatcher("firm_order").forward(req,resp);
-
+        String username=(String) session.getAttribute("user");
+        OrderBean orderBean=(OrderBean) session.getAttribute("order_info");
+        int id=OrderDao.addOrder(username,orderBean.getName(),orderBean.getPhone(),orderBean.getMail(),orderBean.getAddress(),orderBean.getPrice());
+        List<ShopCart> list = (List<ShopCart>) session.getAttribute("settlementBook");
+        for(int i=0;i<list.size();i++){
+            OrderItemDao.addOrderItem(list.get(i),id);
+        }
+        out.print("<h1>支付成功<h1>");
     }
 
     @Override

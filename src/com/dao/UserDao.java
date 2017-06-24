@@ -65,7 +65,7 @@ public class UserDao {
         return resultCode;
     }
     //查看密码
-    public static String queryPw(UserBean userBean){
+    public static String queryPw(String username){
         Connection con=null;
         PreparedStatement ps=null;
         String password="";
@@ -73,7 +73,7 @@ public class UserDao {
             con=GetConnection.getConnection();
             String sql="SELECT password FROM users WHERE username=?";
             ps=con.prepareStatement(sql);
-            ps.setString(1,userBean.getUsername());
+            ps.setString(1,username);
             ResultSet rs=ps.executeQuery();
             while (rs.next()){
                 password=rs.getString(1);
@@ -208,6 +208,29 @@ public class UserDao {
         }
 
         return userBeanList;
+    }
+    public static int updatePw(String username,String password){
+        Connection con=null;
+        PreparedStatement ps=null;
+        int resultCode=0;
+        try {
+            con=GetConnection.getConnection();
+            String sql="UPDATE users SET password = ? WHERE username=?";
+            ps=con.prepareStatement(sql);
+            ps.setString(1,password);
+            ps.setString(2,username);
+            resultCode = ps.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try{
+                ps.close();
+                con.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return resultCode;
     }
 
 }

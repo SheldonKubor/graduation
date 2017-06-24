@@ -17,6 +17,9 @@ import java.util.List;
 public class BookId extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
+
         int id=Integer.parseInt(req.getParameter("id"));
         BookInfoBean bookInfoBean= BookDao.queryOneBook(id);
         List list= ClassfiyDao.queryClassifyInfo();

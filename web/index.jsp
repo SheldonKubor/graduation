@@ -28,39 +28,13 @@
 </head>
 <body>
     <jsp:include page="index_top.jsp"/>
-    <%--<div id="hd">--%>
-        <%--<div class="tools">--%>
-            <%--<div class="top_link">--%>
-                <%--<ul class="tools_list">--%>
-                    <%--<li><a href="login.jsp" id="login">登录</a>&nbsp;&nbsp;</li>--%>
-                    <%--&lt;%&ndash;<li><a href="personal_info.jsp" target="_blank">个人中心</a>&nbsp;&nbsp;</li>&ndash;%&gt;--%>
-                    <%--<li><a href="my_shopcart" target="_blank">我的购物车</a></li>--%>
-                <%--</ul>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-        <%--<div class="search_box">--%>
-            <%--<div class="logo">--%>
-                <%--<img src="images/dangdang.gif">--%>
-            <%--</div>--%>
-            <%--<div class="search">--%>
-                <%--<form action="search_book" name="searchform" id="form_search_new" method="GET">--%>
-                    <%--<input type="text" placeholder="请输入图书分类，作者或书名" class="search_text" name="search_info"/>--%>
 
-                    <%--<input type="submit" class="search_button" value=""/>--%>
-                <%--</form>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
     <div id="index_left">
         <div id="book_menu">
             <ul>
                 <li class="all"><a>图书分类</a></li>
                 <c:forEach items="${requestScope.allClassify}" var="classify">
                     <li><a href="classfiy_search?classify=${classify.name}">${classify.name}</a></li>
-                    <%--<li><a href="classfiy_search?classify=文学">文学</a></li>--%>
-                    <%--<li><a href="classfiy_search?classify=小说">小说</a></li>--%>
-                    <%--<li><a href="classfiy_search?classify=魔幻">魔幻</a></li>--%>
-                    <%--<li><a href="classfiy_search?classify=科幻">科幻</a></li>--%>
                 </c:forEach>
             </ul>
         </div>
@@ -71,8 +45,8 @@
                     <div class="swiper-slide"><img src="images/44.jpg" width="100%"/></div>
                     <div class="swiper-slide"><img src="images/22.jpg" width="100%"/></div>
                     <div class="swiper-slide"><img src="images/33.jpg" width="100%"/></div>
-                    <div class="swiper-slide"><img src="images/4.jpg" width="100%"/></div>
-                    <div class="swiper-slide"><img src="images/5.jpg" width="100%"/></div>
+                    <div class="swiper-slide"><img src="images/12.jpg" width="100%"/></div>
+                    <div class="swiper-slide"><img src="images/14.jpg" width="100%"/></div>
 
 
                     <!-- 如果需要分页器 -->
@@ -104,18 +78,6 @@
 
     </div>
 
-
-
-    <%--<div id="index_bottom">--%>
-        <%--<div class="footer_copyright">--%>
-            <%--<span><a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">京ICP证041189号</a></span>--%>
-            <%--<span class="sep">|</span><span>出版物经营许可证 新出发京批字第直0673号</span><span class="sep">|</span>--%>
-            <%--<span>食品流通许可证：SP1101011010021855(1-1)</span><br>--%>
-            <%--<span>互联网药品信息服务资格证编号：(京)-非经营性-2012-0016</span>--%>
-            <%--<span class="sep">|</span><span>京公网安备110101000001号</span><br>--%>
-            <%--<span>互联网违法和不良信息举报电话：4001066666-5 邮箱：<a href="mailto:service@cs.dangdang.com">service@cs.dangdang.com</a></span>--%>
-        <%--</div>--%>
-    <%--</div>--%>
     <jsp:include page="index_bottom.jsp"/>
     <script src="js/swiper-3.4.2.min.js"></script>
     <script src="js/swiper.animate.min.js"></script>

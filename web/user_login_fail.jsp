@@ -11,6 +11,9 @@
     <title>登陆失败</title>
 </head>
 <body>
-    <h1>用户名或密码错误</h1>
 </body>
+<script>
+    alert("用户名或密码错误");
+    location.href="http://localhost:8080/graduation/login.jsp";
+</script>
 </html>

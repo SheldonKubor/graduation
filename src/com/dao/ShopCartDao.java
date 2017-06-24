@@ -156,7 +156,7 @@ public class ShopCartDao {
     public static ShopCart queryBookByBooknameUsername(String bookname,String username){
         Connection con=null;
         PreparedStatement ps=null;
-        ShopCart shopCart=null;
+        ShopCart shopCart=new ShopCart();
         try {
             con=GetConnection.getConnection();
             String sql="SELECT * FROM shop_cart WHERE bookname=? AND username=?";
@@ -166,6 +166,7 @@ public class ShopCartDao {
             ResultSet rs=ps.executeQuery();
 
             while (rs.next()){
+
                 shopCart.setId(rs.getInt(1));
                 shopCart.setUsername(rs.getString(2));
                 shopCart.setBookname(rs.getString(3));

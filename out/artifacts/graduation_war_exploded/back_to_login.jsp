@@ -11,6 +11,10 @@
     <title>注册成功</title>
 </head>
 <body>
-    <h1><a href="login.jsp">注册成功，返回登陆</a></h1>
+
 </body>
+<script>
+    alert("注册成功，返回登陆");
+    location.href="http://localhost:8080/graduation/login.jsp";
+</script>
 </html>

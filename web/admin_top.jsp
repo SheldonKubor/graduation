@@ -33,7 +33,27 @@
     <div class="layout-admin">
         <header class="layout-header">
             <span class="header-logo">管理</span>
+            <a href="login.jsp" target="_blank" id="login" style="float: right">登录</a>
         </header>
+
     </div>
+<script>
+    function loginCheck() {
+
+
+        var username="<%=session.getAttribute("user")%>";
+
+        if(username=="null"){
+            var obj=document.getElementById("login");
+            obj.innerHTML="登陆";
+        }else{
+
+            var obj=document.getElementById("login");
+            obj.innerHTML="欢迎您，${sessionScope.user}|注销";
+            obj.setAttribute("href","logout")
+        }
+    }
+    window.onload=loginCheck();
+</script>
 </body>
 </html>

@@ -17,24 +17,13 @@
 <body>
     <h1>剩余量</h1>
 
-    <%--<input type="text" name="book_name" id="book_name"/>--%>
-    <%--<input type="button" value="确定" onclick="onClick('book_rest')">--%>
-    <%----%>
-    <form action="book_rest" method="post">
-        <input type="text" name="book_name" id="book_name"/>
-        <input type="submit" value="submit"/>
-    </form>
-
     <table>
         <thead>
             <tr>
                 <td>书名</td><td>剩余量</td><td>操作</td>
             </tr>
         </thead>
-        <%--<tr>--%>
-            <%--<td><c:out value="${sessionScope.bookRestResult.bookName}"/></td>--%>
-            <%--<td><c:out value="${sessionScope.bookRestResult.bookNum}"/></td>--%>
-        <%--</tr>--%>
+
         <c:forEach items="${requestScope.allRestResult}" var="book">
             <tr>
                 <td>
@@ -55,6 +44,7 @@
                 </td>
             </tr>
         </c:forEach>
+
     </table>
 
 </body>

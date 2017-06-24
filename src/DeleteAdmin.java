@@ -20,24 +20,9 @@ import java.util.List;
 public class DeleteAdmin extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //super.doGet(req, resp);
-//        String adminName=req.getParameter("del_admin");
-//        UserDao.deleteAdmin(adminName);
-//        req.setCharacterEncoding("utf-8");
-//        resp.setContentType("text/html,charset=utf-8");
-//        String json= JsonUtil.readJSONData(req);
-//        System.out.print(json);
-//
-//        PrintWriter out=resp.getWriter();
-//        //将json字符串转为java对象
-//        Gson gson=new Gson();
-//        UserBean userBean=gson.fromJson(json,UserBean.class);
-//        int resultCode= UserDao.deleteAdmin(userBean);
-//        if (resultCode==0){
-//            out.print("0");
-//        }else {
-//            out.print("1");
-//        }
+
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
         String name=req.getParameter("name");
         UserBean userBean=new UserBean();
         userBean.setUsername(name);
